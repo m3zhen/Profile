@@ -8,27 +8,44 @@ export const Img = styled.img`
 `
 
 export const GridContainer = styled.section`
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-padding: 3rem;
-place-items: center;
-column-gap: 2rem;
-row-gap: 3rem;
-@media ${(props) => props.theme.breakpoints.sm} {
   display: flex;
-  flex-direction: column;
-  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 2rem 0;
   padding-bottom: 0;
-}
-
+  position: relative;
+  width: 100%;
 `
+
+export const ArrowLeft = styled.img`
+  height: 6rem;
+  top: 50%;
+  transform: rotateY(180deg);
+  cursor: pointer;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    height: 4rem;
+    margin-right: 0;
+  }
+`;
+
+export const ArrowRight = styled.img`
+  height: 6rem;
+  top: 50%;
+  cursor: pointer;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    height: 4rem;
+    margin-left: 0;
+  }
+`;
+
+
 export const BlogCard = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
-  width: 400px;
+  width: 90%;
   @media ${(props) => props.theme.breakpoints.sm} {
-    width: 100%;
+    width: 80%;
   }
 `;
 export const TitleContent = styled.div`
@@ -38,6 +55,15 @@ export const TitleContent = styled.div`
 
 `;
 
+export const CarouselContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    flex-direction: column;
+  }
+`;
 
 export const HeaderThree = styled.h3`
   font-weight: 500;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
+import { ArrowLeft, ArrowRight, BlogCard, CardInfo, CarouselContent, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, Img } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle, PageContainer } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 
@@ -11,6 +11,7 @@ const Projects = () => {
         <SectionDivider />
         <SectionTitle main>Projects</SectionTitle>
         <GridContainer>
+          <ArrowLeft alt={``} src={`/images/arrow.png`} />
           {projects.map((p, i) => {
             return (
               <BlogCard key={i}>
@@ -18,8 +19,10 @@ const Projects = () => {
                   <HeaderThree title>{p.title}</HeaderThree>
                   <Hr />
                 </TitleContent>
-                <Img src={p.image} />
-                <CardInfo className="card-info">{p.description}</CardInfo>
+                <CarouselContent>
+                  <CardInfo className="card-info">{p.description}</CardInfo>
+                  <Img src={p.image} />
+                </CarouselContent>
                 <div>
                   <TitleContent>Stack</TitleContent>
                   <TagList>
@@ -28,13 +31,10 @@ const Projects = () => {
                     })}
                   </TagList>
                 </div>
-                <UtilityList>
-                  <ExternalLinks href={p.visit}>Code</ExternalLinks>
-                  <ExternalLinks href={p.source}>Source</ExternalLinks>
-                </UtilityList>
               </BlogCard>
             );
           })}
+          <ArrowRight alt={``} src={`/images/arrow.png`} />
         </GridContainer>
       </Section>
     </PageContainer>
